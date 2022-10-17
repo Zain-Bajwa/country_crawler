@@ -9,6 +9,6 @@ def simple_countries_detail(start_url):
 
     response = get_response(start_url)
     if response:
-        country_url = parse_countries_urls(response.content)
-    for url in country_url:
+        country_urls = parse_countries_urls(response.content)
+    for url in country_urls:
         get_country_detail(url)

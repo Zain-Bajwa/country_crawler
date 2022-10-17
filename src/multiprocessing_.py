@@ -14,7 +14,7 @@ def multiprocessing_countries_detail(start_url):
 
     response = get_response(start_url)
     if response:
-        country_url = parse_countries_urls(response.content)
+        country_urls = parse_countries_urls(response.content)
    
     with Pool(10) as p:
-        p.map(get_country_detail, country_url)
+        p.map(get_country_detail, country_urls)
